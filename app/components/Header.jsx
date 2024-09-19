@@ -2,6 +2,8 @@ import {Suspense} from 'react';
 import {Await, NavLink} from '@remix-run/react';
 import {useAnalytics} from '@shopify/hydrogen';
 import {useAside} from '~/components/Aside';
+import { Icon } from '@shopify/polaris';
+import { CartFilledIcon } from '@shopify/polaris-icons';
 
 /**
  * @param {HeaderProps}
@@ -144,7 +146,8 @@ function CartBadge({count}) {
         });
       }}
     >
-      Cart {count === null ? <span>&nbsp;</span> : count}
+      <i className="fa-solid fa-cart-shopping" style={{color: '#080808'}}></i>
+      {count === null ? '\u00A0' : <sup>{count}</sup>}
     </a>
   );
 }
